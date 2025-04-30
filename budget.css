@@ -1,0 +1,332 @@
+/* Global Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background-color: #005f73;
+    color: white;
+    padding: 10px 20px;
+    position: relative; /* Add position relative for menu positioning */
+    z-index: 20; /* Ensure header is above the menu */
+}
+
+header .left-side,
+header .center-side,
+header .right-side {
+    display: flex;
+    align-items: center;
+}
+
+header .left-side .hamburger {
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+header .center-side {
+    justify-content: center;
+    text-align: center;
+}
+
+header .center-side h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header .right-side {
+    justify-content: flex-end;
+}
+
+header .right-side a {
+    color: white;
+    text-decoration: none;
+    background-color: #004e66;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+header .right-side a:hover {
+    background-color: #003f56;
+}
+
+/* Navigation Menu Styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #005f73;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #004e66;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul.show {
+    display: block;
+}
+
+
+/* Main Content */
+main {
+    padding: 20px;
+    margin-top: 10px; /* Add spacing after header/nav */
+    margin-bottom: 70px; /* Avoid overlapping with the fixed footer */
+}
+
+main h2 {
+    text-align: center;
+    color: #005f73;
+    margin-bottom: 20px;
+}
+
+/* Budget Container & Columns - Responsive */
+.budget-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.budget-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    position: relative; /* Needed for absolute positioning of delete button */
+}
+
+/* Common Button Styling for Delete and Edit 
+.budget-bar .delete-btn, 
+.budget-bar .edit-btn {
+    position: absolute;
+    bottom: 1px;  /* Align both at the bottom 
+    right: 10px;  /* Keep alignment the same 
+    padding: 3px 8px;  /* Make sure both have same size 
+    font-size: 12px;  
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Delete Button 
+.budget-bar .delete-btn {
+    background-color: red;
+}
+
+.budget-bar .delete-btn:hover {
+    background-color: darkred;
+}
+
+/* Edit Button 
+.budget-bar .edit-btn {
+    background-color: #02f116;
+}
+
+.budget-bar .edit-btn:hover {
+    background-color: #005f73;
+}
+*/
+
+/* Section Title */
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #FFD966;
+    border-radius: 5px;
+}
+
+/* Budget Item Styles */
+.budget-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Progress Bar Styles */
+.bar-container {
+    /*width: 100%;*/
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden; /* Ensure the progress bar doesn't overflow */
+}
+
+.bar {
+    width: 50%; /* Adjust width as needed *//*ithe change kela ahe 70% original value*/
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    color: black;
+    z-index: 1; /* Ensure text is above the bar */
+}
+
+/* Floating Add Button */
+.add-budget-btn {
+    position: fixed;
+    bottom: 80px; /* Position above footer */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #28a745;
+    color: white;
+    font-size: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    z-index: 5; /* Ensure it's above content but below modal */
+}
+
+.add-budget-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal Styles - Fixed */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Form Elements in Modal */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #004e66;
+}
+
+form button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header .center-side h1 {
+        font-size: 22px;
+    }
+    
+    .budget-container {
+        flex-direction: column;
+    }
+    
+    .budget-column {
+        width: 100%;
+    }
+}

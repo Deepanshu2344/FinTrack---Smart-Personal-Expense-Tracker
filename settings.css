@@ -1,0 +1,280 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles using CSS Grid-like layout */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background-color: #005f73; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Left side for Hamburger Menu */
+.left-side {
+    display: flex;
+    align-items: center;
+}
+
+.left-side .hamburger {
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+/* Center side for Dashboard Title */
+.center-side {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensures it stays centered */
+}
+
+.center-side h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Right side for Logout button */
+.right-side {
+    display: flex;
+    align-items: center;
+}
+
+.right-side a {
+    color: white;
+    text-decoration: none;
+    background-color: #004e66; /* Slightly darker blue */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.right-side a:hover {
+    background-color: #003f56;
+}
+
+/* Alternatively, if you want to replicate the layout in the header as below: */
+header .left-side,
+header .center-side,
+header .right-side {
+    display: flex;
+    align-items: center;
+}
+header .left-side {
+    /* Already inside header, left aligned by default */
+}
+header .center-side {
+    justify-content: center;
+}
+header .right-side {
+    justify-content: flex-end;
+}
+
+/* Navigation Menu Styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #005f73;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #004e66;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul.show {
+    display: block;
+}
+
+/* Settings Container */
+.settings-container {
+    max-width: 1000px; /* Adjust width for better readability */
+    margin: 40px auto; /* Centralize content */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);    
+}
+
+/* Section Styles */
+.settings-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #005f73;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* Account Fields */
+.account-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.account-field label {
+    font-weight: bold;
+    flex: 1;
+    color: #333;
+}
+
+.account-field span,
+.account-field input {
+    flex: 1; /* Ensures equal spacing */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.account-field span {
+    background-color: #f9f9f9;
+    border: none;
+}
+
+.account-field button {
+    background-color: #005f73; /* New Theme Color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.account-field button:hover {
+    background-color: #003f56; /* Slightly Darker Shade for Hover */
+}
+
+
+/* Toggle Switches 
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggle-switch label {
+    flex: 1;
+    font-weight: bold;
+    color: #333;
+}
+
+.toggle-switch input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+} */
+
+/* Data Management Buttons */
+.data-management {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.data-management button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: calc(50% - 5px); /* Ensures better spacing */
+}
+
+.data-management button:hover {
+    background-color: #003f56;
+}
+
+/* Support & Terms Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: calc(50% - 5px); /* Ensures better spacing */
+}
+
+.button-container button:hover {
+    background-color: #003f56;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-container {
+        width: 95%; /* Adjust width */
+        padding: 15px;
+    }
+
+    header .center-side h1 {
+        font-size: 20px;
+    }
+}
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

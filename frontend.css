@@ -1,0 +1,101 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #005f73; /* Matches the blue-green tone in the background */
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Section Styles */
+  .main {
+    position: relative;
+    background: url('images/gen1.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 10px;
+  }
+  
+  /* Dim overlay on the background image */
+  .main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+  
+  /* Overlay for the text */
+  .overlay {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    text-align: center;
+    border: 2px solid #005f73; /* Updated border color */
+  }
+  
+  .main h1 {
+    font-size: 48px;
+    color: #005f73; /* Updated header text color */
+    margin: 0;
+  }
+  
+  .main h2 {
+    font-size: 24px;
+    color: #005f73;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  .main p {
+    font-size: 18px;
+    color: #005f73;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #005f73; /* Matches the updated theme */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }  
